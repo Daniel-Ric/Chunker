@@ -614,7 +614,7 @@ public class JsonTextUtil {
                                         hoverEventTag.put("id", contents.get("type").getAsString());
                                     }
                                     if (contents.has("name")) {
-                                        hoverEventTag.put("name", toNBT(contents.get("type")));
+                                        hoverEventTag.put("name", toNBT(contents.get("name")));
                                     }
                                     if (contents.has("id")) {
                                         JsonElement uuid = contents.get("id");
@@ -625,6 +625,7 @@ public class JsonTextUtil {
                                             int i = 0;
                                             for (JsonElement id : uuid.getAsJsonArray()) {
                                                 ids[i] = id.getAsInt();
+                                                i++;
                                             }
                                             hoverEventTag.put("uuid", ids);
                                         } else {
